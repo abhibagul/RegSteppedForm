@@ -1,13 +1,166 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html,body, *{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+.regFormContainer {
+  display: flex;
+  height: 100vh;
+}
+.regFormSidebar{
+  background: rgb(248,248,248);
+  flex-shrink: 0;
+  width: 30%;
+  display: flex;
+  justify-content: right;
+  box-shadow: 3px 0px 5px rgba(0,0,0,.1);
+  z-index: 9;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.regFormMain{
+  background: #fff;
+  flex-grow: 1;
+  min-width: 70%; 
+  padding: 10px;
+  overflow-y: auto;
+  align-items: center;
+  display: flex;
+}
+.sidebarInner{
+  max-width: 300px;
+  min-width: 300px;
+  flex-shrink:0;
+  flex-grow: 0;
+  padding: 10px;
+}
+.regFormInner {
+  max-width: 800px;
+  padding: 20px 80px;
+}
+
+.stepFormMain input{
+  border: 2px solid rgb(228 227 227);
+  border-radius: 0px;
+}
+
+.stepFormMain label{
+  font-size: 14px;
+}
+
+.stepName {
+  font-size: 34px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+.btn-next-nav{
+  background: #0b4a99 ;
+  border: #0b4a99 ;
+  border-radius: 0px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,.1), -2px -2px 5px rgba(0,0,0,.1);
+  margin-right: 10px;
+}
+.regFormNavControl{
+  margin: 20px 0px;
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.progressFormList {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.progressFormList li .thumb{
+  background: #ccc;
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  z-index: 9999;
+}
+
+.progressFormList li .thumb:before{
+  content: "";
+  display: block;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background: rgb(248,248,248);
+  width: 12px;
+  height: 12px;
+  position: absolute;
+}
+
+
+.progressFormList li .thumb:after{
+  content: "";
+  display: block;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background: #ccc;
+  width: 6px;
+  height: 6px;
+  position: absolute;
+}
+
+.progressFormList li.stageActive .thumb{
+  background: #0b4a99;
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.progressFormList li.stageActive .thumb:before{
+  content: "";
+  display: block;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background: #fff;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+}
+
+.progressFormList li:first-child:before{
+  display: none;
+}
+.stageName{
+  margin-left: 30px;
+}
+.progressFormList li{
+  position:relative;
+}
+.progressFormList li:before{
+  content: "";
+  display: block;
+  height: 30px;
+  background: #ccc;
+  width:4px;
+  position: absolute;
+  transform: translateY(-100%);
+  left: 8px;
+}
+
+.progressFormList li.stageActive .thumb:after{
+  content: "";
+  display: block;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background: #0b4a99;
+  width: 6px;
+  height: 6px;
+  position: absolute;
+}
+
+.progressFormList li{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.sidebarInner{
+  display: flex;
+  align-items: center;
 }
