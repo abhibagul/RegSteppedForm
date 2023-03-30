@@ -14,7 +14,7 @@ export default function SidebarProgress() {
         <ul className='progressFormList'>
         {
             formData.__formData.stages.map((e,i)=>{
-                return <li className={ ( i < formData.__formData.registrationStage) ? "stageActive" : "" }><span className='thumb'></span><span className='stageName'>{e}</span></li>
+                return <li className={ ( i < formData.__formData.registrationStage) ? "stageActive" :  (i == formData.__formData.registrationStage)  ? " semiActive" : ""}><span className='thumb'></span><span className='stageName'>{e}</span></li>
             })
         }
         </ul>

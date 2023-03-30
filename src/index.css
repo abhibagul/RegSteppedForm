@@ -158,9 +158,24 @@ html,body, *{
 .progressFormList li{
   display: flex;
   gap: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .sidebarInner{
   display: flex;
   align-items: center;
+}
+
+.progressFormList li.semiActive .thumb:after{
+  content: "";
+  display: block;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background: #0b4a99;
+  width: 6px;
+  height: 6px;
+  position: absolute;
+}
+.progressFormList li.semiActive:before, .progressFormList li.stageActive:before{
+  background: #0b4a99;
 }
